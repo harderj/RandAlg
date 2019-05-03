@@ -1,13 +1,13 @@
 
 
 
-\section*{1.8}
+\section*{Problem 1.8}
 
 \subsection*{a}
 
 Consider the graph
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\linewidth]{figures/graph1.jpg}
 \end{figure}
@@ -31,14 +31,14 @@ Now the number of splits of $n$ vertices with $s$ in the first group and $t$ in 
 So this is an upper bound on the number of min-cuts.
 Consider the graph
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\linewidth]{figures/graph1.jpg}
+	\includegraphics[width=0.4\linewidth]{figures/graph2.jpg}
 \end{figure}
 
 This achieves the upperbound of $2^{n-2}$ min-cuts, since any for any middle vertex you can choose either the left or the right edge to remove, resulting in a min-cut when done for all middle vertices.
 
-\section*{2.1}
+\section*{Problem 2.1}
 
 We claim that for any deterministic evaluation algorithm there is a $T_{d,k}$ tree which forces the algorithm to evaluate all subnodes (and leafs), and furthermore we can choose the root node to evaluate to $0$ and $1$ as we please.
 Using DeMorgan it is easy to see that $d$-$\land$-$\lor$-trees are equivalent to $d$-$\downarrow$-trees so it is enough to consider these (we even allow the height to be odd).
@@ -49,5 +49,21 @@ By induction we can choose the first $d-1$ choices of subtrees of the algorithm 
 This is because each zero forces the algorithm to evaluate more subtrees.
 The last chosen subtree of the algorithm we can choose to evaluate to $0$ or $1$ depending on whether we want the node to evaluate to $1$ resp. $0$.
 This completes the argument.
+
+\section*{Exercise 1.2}
+
+Let $H_n$ be the hand weight graph with $4n$ vertices, that is $2n$ on each side.
+At any point if the algorithm chooses two vertices on different sides, we increase the min-cut. 
+After $n$ succesful steps (that is steps not resulting in larger min-cut) each side still has at least $n$ vertices left. The probability of choosing a pair from different sides during the first $n$ steps is at least
+
+\begin{align*}
+	\frac{\text{Number of pairs of vertices with each in different side}}
+	{\text{Total number of pairs}}
+	\\ \geq \frac{ n \cdot n }
+	{4n \cdot (4n - 1) / 2}
+	= \frac{n}{8n - 4}
+	\geq \frac{1}{8}
+\end{align*}
+
 
 
