@@ -2,6 +2,6 @@
 \input{preamble/preamble.tex}
 
 \begin{document}
-\input{jacob/ass1.tex}
+\input{ass1.tex}
 \input{ass1/asss1.tex}
 \end{document}

@@ -1,57 +1,39 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.27)  3 MAY 2019 12:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.24)  3 MAY 2019 13:43
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **ass1.tex
 (./ass1.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
-(./ass1.aux)
-\openout1 = `ass1.aux'.
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+! Undefined control sequence.
+l.4 \section
+            *{1.8}
+? q
+OK, entering \batchmode...
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-
-
-./ass1.tex:3: LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
+! LaTeX Error: Missing \begin{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3 \begin{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./ass1.tex:5: Undefined control sequence.
-l.5 \section
-            *{1.8}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+l.4 \section*
+             {1.8}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no * in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 8 in font nullfont!
-./ass1.tex:7: Undefined control sequence.
-l.7 \subsection
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 4--5
+[] 
+ []
+
+! Undefined control sequence.
+l.6 \subsection
                *{a}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -59,8 +41,37 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \subsection*
+                {a}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Missing character: There is no * in font nullfont!
 Missing character: There is no a in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 6--7
+[] 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 C
+     onsider the graph
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Missing character: There is no C in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
@@ -78,23 +89,40 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no h in font nullfont!
 
-./ass1.tex:11: LaTeX Error: Environment figure undefined.
+Overfull \hbox (20.0pt too wide) in paragraph at lines 8--9
+[]
+ []
+
+
+! LaTeX Error: Environment figure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 \begin{figure}
+l.10 \begin{figure}
                    [h]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \begin{figure}[
+                    h]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Missing character: There is no [ in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no ] in font nullfont!
-./ass1.tex:13: Undefined control sequence.
-l.13 	\includegraphics
+! Undefined control sequence.
+l.12 	\includegraphics
                       [width=0.4\linewidth]{graph1.jpg}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -112,19 +140,19 @@ Missing character: There is no = in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
-./ass1.tex:13: Missing number, treated as zero.
+! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.13 	\includegraphics[width=0.4\linewidth]
+l.12 	\includegraphics[width=0.4\linewidth]
                                            {graph1.jpg}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./ass1.tex:13: Illegal unit of measure (pt inserted).
+! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.13 	\includegraphics[width=0.4\linewidth]
+l.12 	\includegraphics[width=0.4\linewidth]
                                            {graph1.jpg}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -145,17 +173,34 @@ Missing character: There is no j in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no g in font nullfont!
 
-./ass1.tex:15: LaTeX Error: \begin{document} ended by \end{figure}.
+Overfull \hbox (20.0pt too wide) in paragraph at lines 10--13
+ [] 
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.15 \end{figure}
+l.14 \end{figure}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 R
+      emoving any edge on the left side will increase the (s-t) min cut.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no R in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -245,9 +290,9 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no p in font nullfont!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 18.
+(Font)              <7> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 18.
+(Font)              <5> on input line 17.
 Missing character: There is no o in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -434,6 +479,56 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 16--19
+[]
+ []
+
+
+Overfull \hbox (6.38612pt too wide) in paragraph at lines 16--19
+[]$
+ []
+
+
+Overfull \hbox (6.38612pt too wide) in paragraph at lines 16--19
+[]$
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 $
+      $ \left(\frac{2}{3}\right)^{n-1} $$
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 20--20
+[] 
+ []
+
+
+Overfull \hbox (37.80177pt too wide) detected at line 20
+[][]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 W
+      here $n$ is the total number of edges. (This is exponentially decreasi...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Missing character: There is no W in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -497,8 +592,23 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no . in font nullfont!
-./ass1.tex:25: Undefined control sequence.
-l.25 \subsection
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 22--23
+[]
+ []
+
+
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 22--23
+\OML/cmm/m/it/10 n$
+ []
+
+
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 22--23
+\OML/cmm/m/it/10 n$ 
+ []
+
+! Undefined control sequence.
+l.24 \subsection
                 *{b}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -506,8 +616,38 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 \subsection*
+                 {b}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Missing character: There is no * in font nullfont!
 Missing character: There is no b in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 24--25
+[] 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 O
+      bserve that any (s-t) min-cut define a unique split (2-partition) of t...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Missing character: There is no O in font nullfont!
 Missing character: There is no b in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -940,23 +1080,70 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no h in font nullfont!
 
-./ass1.tex:36: LaTeX Error: Environment figure undefined.
+Overfull \hbox (20.0pt too wide) in paragraph at lines 26--34
+[]
+ []
+
+
+Overfull \hbox (4.6875pt too wide) in paragraph at lines 26--34
+\OML/cmm/m/it/10 s$
+ []
+
+
+Overfull \hbox (13.28879pt too wide) in paragraph at lines 26--34
+\OT1/cmr/m/it/10 cut
+ []
+
+
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 26--34
+\OML/cmm/m/it/10 n$
+ []
+
+
+Overfull \hbox (4.6875pt too wide) in paragraph at lines 26--34
+\OML/cmm/m/it/10 s$
+ []
+
+
+Overfull \hbox (3.61111pt too wide) in paragraph at lines 26--34
+\OML/cmm/m/it/10 t$
+ []
+
+
+Overfull \hbox (20.67949pt too wide) in paragraph at lines 26--34
+\OT1/cmr/m/n/10 2[]$
+ []
+
+
+! LaTeX Error: Environment figure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.36 \begin{figure}
+l.35 \begin{figure}
                    [h]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 \begin{figure}[
+                    h]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Missing character: There is no [ in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no ] in font nullfont!
-./ass1.tex:38: Undefined control sequence.
-l.38 	\includegraphics
+! Undefined control sequence.
+l.37 	\includegraphics
                       [width=0.4\linewidth]{graph2.jpg}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -974,19 +1161,19 @@ Missing character: There is no = in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
-./ass1.tex:38: Missing number, treated as zero.
+! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.38 	\includegraphics[width=0.4\linewidth]
+l.37 	\includegraphics[width=0.4\linewidth]
                                            {graph2.jpg}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./ass1.tex:38: Illegal unit of measure (pt inserted).
+! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.38 	\includegraphics[width=0.4\linewidth]
+l.37 	\includegraphics[width=0.4\linewidth]
                                            {graph2.jpg}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1007,17 +1194,35 @@ Missing character: There is no j in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no g in font nullfont!
 
-./ass1.tex:39: LaTeX Error: \begin{document} ended by \end{figure}.
+! LaTeX Error: \begin{document} ended by \end{figure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.39 \end{figure}
+l.38 \end{figure}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 35--39
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 T
+      his achieves the upperbound of $2^{n-2}$ min-cuts, since any for any m...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no T in font nullfont!
 Missing character: There is no h in font nullfont!
@@ -1177,8 +1382,18 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
-./ass1.tex:43: Undefined control sequence.
-l.43 \section
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 40--41
+[]
+ []
+
+
+Overfull \hbox (20.67949pt too wide) in paragraph at lines 40--41
+\OT1/cmr/m/n/10 2[]$
+ []
+
+! Undefined control sequence.
+l.42 \section
              *{2.1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1186,10 +1401,40 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 \section*
+              {2.1}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Missing character: There is no * in font nullfont!
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 1 in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 42--43
+[] 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 W
+      e claim that for any deterministic evaluation algorithm there is a $T_...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Missing character: There is no W in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no c in font nullfont!
@@ -1886,41 +2131,123 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
 
-./ass1.tex:55: LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
+Overfull \hbox (20.0pt too wide) in paragraph at lines 44--53
+[]
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.55 \end{document}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ass1.aux) ) 
+Overfull \hbox (17.30179pt too wide) in paragraph at lines 44--53
+\OML/cmm/m/it/10 T[]$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 0$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 1$
+ []
+
+
+Overfull \hbox (18.53824pt too wide) in paragraph at lines 44--53
+\OML/cmm/m/it/10 d$$\OMS/cmsy/m/n/10 ^$$_$
+ []
+
+
+Overfull \hbox (10.20488pt too wide) in paragraph at lines 44--53
+\OML/cmm/m/it/10 d$$\OMS/cmsy/m/n/10 #$
+ []
+
+
+Overfull \hbox (5.76158pt too wide) in paragraph at lines 44--53
+\OML/cmm/m/it/10 h$
+ []
+
+
+Overfull \hbox (16.3171pt too wide) in paragraph at lines 44--53
+\OML/cmm/m/it/10 h \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 0$
+ []
+
+
+Overfull \hbox (15.55553pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 1 =
+ []
+
+
+Overfull \hbox (9.691pt too wide) in paragraph at lines 44--53
+\OML/cmm/m/it/10 d[]$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 0$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 1$
+ []
+
+
+Overfull \hbox (16.3171pt too wide) in paragraph at lines 44--53
+\OML/cmm/m/it/10 h \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 44--53
+\OML/cmm/m/it/10 n$
+ []
+
+
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 44--53
+\OML/cmm/m/it/10 d \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 1$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 0$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 1$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 1$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--53
+\OT1/cmr/m/n/10 0$
+ []
+
+)
+! Emergency stop.
+<*> ass1.tex
+            
+*** (job aborted, no legal \end found)
+
+ 
 Here is how much of TeX's memory you used:
- 18 strings out of 494910
- 244 string characters out of 6179835
- 48398 words of memory out of 5000000
- 3403 multiletter control sequences out of 15000+600000
+ 12 strings out of 493029
+ 190 string characters out of 6136233
+ 55069 words of memory out of 5000000
+ 3647 multiletter control sequences out of 15000+600000
  3986 words of font info for 15 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 18i,4n,12p,243b,109s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmti10.pfb>
-Output written on ass1.pdf (1 page, 63435 bytes).
-PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 1141 hyphenation exceptions out of 8191
+ 18i,2n,12p,243b,67s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
