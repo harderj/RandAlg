@@ -109,7 +109,7 @@ extracting more unbiased coin tosses. \\
 This procedure can be iterated until we are left with a list where all the values are equal,
 at which point we halt.
 \section*{Problem 1.4}
-\section*{(a)}
+\subsection*{(a)}
 Since the permutations on $n$ elements are in $1-1$ correspondence with the first $n!$ integers,
 we can pick any specific correspondence, $\varphi:\left\{1,\cdots,n!\right\} \to S_n$, 
 use the random bits to generate a random integer, $x$, between $1$ and $n!$
@@ -121,7 +121,7 @@ The chance of getting an integer larger than $n!$ is at most $1/2$,
 so we expect getting an integer in the desired range after at most two tries. \\ \\
 Since there are $n!$ different permutations of $n$ elements it takes $\lg(n!)$ bits to distinguish them all.
 So we would have to sample at least $\lg(n!)=\Omega(n lg(n))$ bits.
-\section*{(b)}
+\subsection*{(b)}
 Consider two permutations $\left[ i_1,\cdots,i_n \right]$ and $\left[ j_1,\cdots,j_n \right]$.
 Then since the uniform variables are iid we have that the joint distribution of
 $\left( X_{i_1},\cdots, X_{i_n} \right)$ and
@@ -140,6 +140,21 @@ when sorting it. \\ \\
 Treating the sampling of uniform variables as a black box,
 this scheme is as efficient as the sorting algorithm used to sort $\left[ X_1,\cdots,X_n \right]$.
 \subsection*{(c)}
+Consider comparing $X_i$ and $X_j$ when neither have been compared earlier in the execution. \\
+This means their prefixes are empty and so we start sampling bits of their respective binary expansions
+until the first time they differ. \\
+Since the probability of two uniformly sampled bits differing is $1/2$, the number of pairs of bits required
+is geometrically distributed with succes parameter $1/2$
+and so the expected number of pairs necessary is $2$ - or $4$ bits in total. \\
+The case where the current prefixes of the two variables are of the same length and agree is similar. \\
+In the case where the current prefixes are of different lenghts the upper bound of $4$ expected bits clearly also holds. \\ \\
+Thus at any comparison,
+the expected number of bit samples necessary to perform it is bounded above by $4$. \\
+Since the best sorting algorithms perform $O(n \lg n)$ comparisons,
+the expected number of bit samples is $O(n \lg n)$. \\ \\
+We saw in subproblem $(a)$ that any scheme for using random bits to produce random permutations 
+uses $\Omega(n \lg n)$ samples,
+we have that the expected number of samples used by this procedure is $\Theta(n \lg n)$.
 \section*{Problem 2.6}
 We will represent a deterministic sorting algorithm by a binary decision tree,
 each node of which represents a comparison made,
