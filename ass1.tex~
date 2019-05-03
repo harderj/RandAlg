@@ -41,7 +41,7 @@ Consider the graph
 	\includegraphics[width=0.4\linewidth]{graph2.jpg}
 \end{figure}
 
-This achieves the upperbound of $2^{n-2}$ min-cuts, since any for any middle vertex you can choose either the left or the right edge to remove, resulting in a min-cut when done for all middle vertices.
+This achieves the upperbound of $2^{n-2}$ min-cuts, since any for any middle vertexyou can choose either the left or the right edge to remove, resulting in a min-cut when done for all middle vertices.
 
 \section*{2.1}
 
