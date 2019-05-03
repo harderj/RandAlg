@@ -52,18 +52,16 @@ This completes the argument.
 
 \section*{Exercise 1.2}
 
-Let $H_n$ be the hand weight graph with $4n$ vertices, that is $2n$ on each side.
-At any point if the algorithm chooses two vertices on different sides, we increase the min-cut. 
-After $n$ succesful steps (that is steps not resulting in larger min-cut) each side still has at least $n$ vertices left. The probability of choosing a pair from different sides during the first $n$ steps is at least
+Let $H_n$ be the \emph{hand weight graph} with $4n$ vertices, that is $2n$ on each side.
+At any point if the algorithm chooses two vertices on different sides, we increase the min-cut.  After $n$ succesful steps (that is steps not resulting in larger min-cut) each side still has at least $n$ vertices left. The probability of choosing a pair from different sides during the first $n$ steps is at least
 
 \begin{align*}
 	\frac{\text{Number of pairs of vertices with each in different side}}
 	{\text{Total number of pairs}}
-	\\ \geq \frac{ n \cdot n }
+	&\geq \frac{ n \cdot n }
 	{4n \cdot (4n - 1) / 2}
-	= \frac{n}{8n - 4}
-	\geq \frac{1}{8}
+	\\ &= \frac{n}{8n - 4}
+	\\ &\geq \frac{1}{8}
 \end{align*}
 
-
-
+Thus the change of fail is a least $\left(\frac{7}{8}\right)^n$.
