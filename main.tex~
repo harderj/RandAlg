@@ -1,7 +1,0 @@
-
-\input{preamble/preamble.tex}
-
-\begin{document}
-\input{ass1.tex}
-\input{ass1/asss1.tex}
-\end{document}
