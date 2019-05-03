@@ -1,0 +1,21 @@
+\section*{Summary}
+\begin{itemize}
+	\item A \textbf{Las Vegas algorithm} is a randomized algorithm where the running time is a random variable.
+	\item A \textbf{Monte Carlo algorithm} is a randomized algorithm where the correctness is a random variable.
+	\item \textbf{Yao's minimax princple:} \textit{For all distributions, p, over the input
+			$\mathcal{I}$ and $q$ over the set of algorithms $\mathcal{A}$}
+			\begin{align*}
+				\text{min}_{A \in \mathcal{A}}EC(I_p,A) \leq \text{max}_{I \in \mathcal{I}}EC(I,A_q)
+			\end{align*}
+			\textit{where C(I,A) denotes the running time of A on input I}
+\end{itemize}
+\textit{Proof of Yao's minimax principle}
+\begin{align*}
+	&\text{max}_{I \in \mathcal{I}}EC(I, A_q) \\
+	=& \sum_{J \in \mathcal{I}}P(I_p=J) \text{max}_{I \in \mathcal{I}}EC(I,A_q) \\
+	\geq& \sum_{J \in \mathcal{I}}P(I_p=J)EC(J,A_q) \\
+	=& \sum_{J \in \mathcal{I}}P(I_p=J) \sum_{A \in \mathcal{A}}P(A_q=A)C(J,A) \\
+	=& \sum_{A \in \mathcal{A}} \sum_{J \in \mathcal{I}}P(A_q=A)P(I_p=J)C(J_A)
+\end{align*}
+and reverse to obtain ``$\geq \min_{A \in \mathcal{A}}EC(I_p,A)$'' as desired.
+\newpage
