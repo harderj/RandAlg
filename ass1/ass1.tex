@@ -109,6 +109,18 @@ extracting more unbiased coin tosses. \\
 This procedure can be iterated until we are left with a list where all the values are equal,
 at which point we halt.
 \section*{Problem 1.4}
+\section*{(a)}
+Since the permutations on $n$ elements are in $1-1$ correspondence with the first $n!$ integers,
+we can pick any specific correspondence, $\varphi:\left\{1,\cdots,n!\right\} \to S_n$, 
+use the random bits to generate a random integer, $x$, between $1$ and $n!$
+and compute $\varphi(x)$. \\
+We would need $\lceil{\lg(n!)}\rceil$ bit to generate such an integer.
+Note that we might get an integer larger than $n!$,
+in which case we would have to try again until we get an integer in the desired range.
+The chance of getting an integer larger than $n!$ is at most $1/2$, 
+so we expect getting an integer in the desired range after at most two tries. \\ \\
+Since there are $n!$ different permutations of $n$ elements it takes $\lg(n!)$ bits to distinguish them all.
+So we would have to sample at least $\lg(n!)=\Omega(n lg(n))$ bits.
 \section*{(b)}
 Consider two permutations $\left[ i_1,\cdots,i_n \right]$ and $\left[ j_1,\cdots,j_n \right]$.
 Then since the uniform variables are iid we have that the joint distribution of
@@ -128,5 +140,49 @@ when sorting it. \\ \\
 Treating the sampling of uniform variables as a black box,
 this scheme is as efficient as the sorting algorithm used to sort $\left[ X_1,\cdots,X_n \right]$.
 \subsection*{(c)}
-
+\section*{Problem 2.6}
+We will represent a deterministic sorting algorithm by a binary decision tree,
+each node of which represents a comparison made,
+its two branches represent the two possible outcomes of said comparison,
+and its two children represent the comparison it chooses to make based on the outcome. \\
+I.e. the two children of a node represent the decision the algorithm makes based on the outcome of the comparison represented by the node.
+An execution of the algorithm is represented by following a path from the root down the tree,
+thus tracking the comparisons made,
+and the algorithm halts when a leaf is reached, 
+i.e. there are no more decisions to be made and the list is sorted. \\
+Hence the number of comparisons made by an execution of the algorithm is depth of the leaf representing its termination. \\
+Since there are $n!$ different inputs, the tree must have $n!$ leaves. \\
+When the input is chosen uniformly at random,
+the expected number of comparisons is then the average leaf-depth of its decision tree. \\ \\
+We proceed to show that any binary tree with $k$ leaves has average leaf-depth at least $lg(k)$. \\
+To this end consider any binary tree, $T$. 
+For any node we will call the subgraph consisting of its two children and the two edges connecting it to its children its \textit{branching}.
+Let $h$ be the height of the tree and $d$ the minimum depth of any leaf. \\
+By \textit{balancing} the tree we mean the process of choosing a leaf of depth $h-1$,
+removing its branching,
+and adding a branching at a leaf of depth $d$. \\
+By iteratively balancing a $T$ until $h-d \leq 1$ we obtain a completely balanced tree with $k$ leaves. \\
+We claim that if $T$ is not completely balanced, any balancing reduces the average leaf-depth. \\
+Indeed let $S$ be the sum of the depth of all leaves of $T$,
+and $S'$ the sum of the depth of all leaves of the tree obtained by performing a balancing on $T$. Then
+\begin{align*}
+	S'=S-2h+h-1-d+2(d+1)=S-h+d+1 \leq S
+\end{align*}
+since the fact that $T$ is not completely balanced yields that $h > d+1$. \\
+This proves that a completely balanced binary tree with $k$ leaves minimizes the average leaf-depth of any binary tree with $k$ leaves. \\
+Since a completely balanced binary tree clearly has roughly $\lg(k)$ average leaf-depth
+(specifically between $\lfloor \lg(k) \rfloor$ and $\lceil \lg(k) \rceil$)
+this demonstrates the desired lower bound. \\ \\
+Returning to the decision tree of an arbitrary deterministic sorting algorithm,
+this proves that the average number of comparisons made by the algorithm on uniformly chosen input
+is at least $\lg(n!)=\Omega(n \lg n)$. Hence if $p$ is the uniform distribution on
+$\mathcal{I}=\left\{ \left[ \pi(1),\cdots,\pi(n) \right] \ | \ \pi \in S_n \right\}$
+and $I_p$ denotes an input chosen according to this distribution then 
+\begin{align*}
+	\text{min}_{A \in \mathcal{A}}EC(I_p,A)=\Omega(n \lg n)
+\end{align*}
+where $\mathcal{A}$ is the (finite) set of deterministic sorting algorithms. \\
+The assumption that this set is finite is readily seen to hold true
+since there are only finitely many binary trees with a fixed number of leaves. \\ \\
+Now Yao's principle yields that the expected running time of any las vegas algorithm is $\Omega(n \lg n)$.
 \end{document}
