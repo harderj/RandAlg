@@ -1,0 +1,29 @@
+\section*{Problem 3.5}
+Assume first that $VX=\sigma^2=1$ and observe that for any $y \in \R^+$
+\begin{align*}
+	& P(X-\mu \geq t \sigma) \\
+	=& P(X-\mu+y \geq t+y) \\
+	\leq& P\left( \left( X-\mu+y \right)^2 \geq \left( t+y \right)^2 \right) \\
+	\leq & \frac{E\left( X-\mu+y \right)^2}{\left( t+y \right)^2}
+\end{align*}
+by Markov. \\ \\
+Now
+\begin{align*}
+	E\left( X-\mu-y \right)^2=E\left( X-\mu \right)^2+Ey^2+2yE\left( X-\mu \right)=1+y^2
+\end{align*}
+so that
+\begin{align*}
+	\frac{E\left( X-\mu+y \right)^2}{\left( t+y \right)^2}=\frac{1+y^2}{\left( t+y \right)^2}
+\end{align*}
+Since this bound holds for any $y$ it in particular holds for $y=1/t$, yielding 
+\begin{align*}
+	P(X-\mu \geq t) \leq \frac{1+t^{-2}}{\left( t+t^{-1} \right)^2}
+	=\frac{t^{-1}\left( t+t^{-1} \right)}{\left( t+t^{-1} \right)^2}=\frac{t^{-1}}{t+t^{-1}}=\frac{1}{t^2+1}
+\end{align*}
+as desired.
+Now for the general case observe that 
+since $V(\frac{X-\mu}{\sigma})=1$ we have
+\begin{align*}
+	P\left( X-\mu \geq t \sigma \right)=P\left( \frac{X-\mu}{\sigma} \geq t \right) \leq \frac{1}{t^2+1}
+\end{align*}
+unless $\sigma=0$, but in this case $X$ is degenerate and the bound trivially holds.
