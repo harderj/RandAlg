@@ -1,0 +1,27 @@
+\section*{Problem 3.3 (a)}
+Let $M_k$ denote the binominally distributed random variable counting the number of requests sent to memory unit $k$, 
+and let $N_k$ denote the number of requests answered by memory unit $k$. \\
+Then the support of $N_k$ is $\left\{ 0,1,2 \right\}$ and 
+\begin{align*}
+	N_k=0 & \iff  M_k=0 \\
+	N_k=1 & \iff  M_k=1 \\
+	N_k=2 & \iff  M_k \geq 2
+\end{align*}
+And hence
+\begin{align*}
+	EN_k & = 0 \cdot P(M_k=0)+1 \cdot P(M_k=1)+2 \cdot P(M_k \geq 2) \\
+	&=P(M_k=1)+2(1-P(M_k=0)-P(M_k=1)) \\
+	&= \frac{1}{n}(\frac{n-1}{n})^{n-1}n+2(1-\left( \frac{n-1}{n} \right)^n-\frac{1}{n}\left( \frac{n-1}{n} \right)^{n-1}n) \\
+	&= \left( \frac{n-1}{n} \right)^{n-1}+2\left( 1-\left( \frac{n-1}{n} \right)^n-\left( \frac{n-1}{n} \right)^{n-1} \right) \\
+	&\approx 2-3e^{-1}
+\end{align*}
+Hence if $N$ denotes the total number of requests answered, then 
+\begin{align*}
+	N= \sum_{k=1}^{n}N_k
+\end{align*}
+and hence
+\begin{align*}
+	EN=\sum_{k=1}^n EN_k=n\left( 2-3e^{-1} \right)
+\end{align*}
+This analysis holds only when $n>2$, but for $n\geq 2$ all requests are clearly answered regardless of the outcomes of the requests
+so in these cases the expected number of requests answered is $n$.
