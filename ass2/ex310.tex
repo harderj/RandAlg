@@ -1,0 +1,9 @@
+\section*{Ex.3.10}
+Since $H_n < \ln(n) + 1$ we can use Chebyshevs inequality to deduce
+\begin{align*}
+P(X > \beta n \ln(n)) &\leq P(X > \beta n (H_n - 1)
+\\ &= P(\frac{X - nH_n}{nH_n} > \beta - \beta H_n^{-1} - 1)
+\\ &\leq \frac{n^2 \sum_{i=1}^n i^{-2} - nH_n}{n^2 H_n^2 (\beta - \beta H_n^{-1} -1)^2}
+\\ &\leq \frac{1}{(\beta - 1)^2}
+\end{align*}
+When $\beta \geq \frac{1}{1 - H_n^{-1}}$ (not a very strict requirement). We have used that $\sum_{i=1}^n i^{-2} \leq H_n^2$ (easily seen). 

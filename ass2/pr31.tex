@@ -1,0 +1,9 @@
+\section*{Pr.3.1}
+
+If $N$ is the random variable of the number of empty bins then
+$N = \sum_{i=1}^n N_i$ where $N_i$ is one if bin number $i$ is empty
+and zero otherwise. 
+Thus by linearity of expectation
+$$ E N = \sum_{i=1}^n E N_i = n \cdot \left(\frac{n-1}{n}\right)^m $$
+since every independent $m$ balls have to land in the $n-1$ other bins
+If $m = n$ this is $\approx n / e$.
