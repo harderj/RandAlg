@@ -1,0 +1,23 @@
+\section*{Exercise 4.7}
+Given a solution $\hat{x}$ to the linear program relaxation we use the following simple rounding procedure. 
+\begin{align*}
+	\overline{x_{i0}}=1 \ \& \ \overline{x_{i1}}=0 \ \iff \ \widehat{x_{i0}}>\frac{1}{2}
+\end{align*}
+There are two cases: \\ \\
+If $\overline{x_{i0}}=1$ and $\overline{x_{i1}}=0$ we have 
+$\widehat{x_{i0}}>\frac{1}{2}$ and hence $\overline{x_{i0}} < 2 \widehat{x_{i0}}$. 
+Also we trivially have $\overline{x_{i1}} \leq 2 \widehat{x_{i1}}$. \\ \\
+If $\overline{x_{i0}}=0$ and $\overline{x_{i1}}=1$ 
+then $\widehat{x_{i0}} \leq 1/2$ and hence $\widehat{x_{i1}} \geq 1/2$ and hence
+$\overline{x_{i1}} \leq 2 \widehat{x_{i1}}$ and
+$\overline{x_{i0}} \leq 2 \widehat{x_{i0}}$ trivially holds. \\ \\
+In any case we have $\overline{x_{ij}} \leq 2 \widehat{x_{ij}}$. \\
+We then have for any boundary $b$
+\begin{align*}
+	\sum_{i \in T_{b0}}\overline{x_{i0}}+ \sum_{i \in T_{b1}}\overline{x_{i1}} \leq
+	\sum_{i \in T_{b0}}2\widehat{x_{i0}}+ \sum_{i \in T_{b1}}2\widehat{x_{i1}} \\
+	\leq 2 \left( \sum_{i \in T_{b0}}\widehat{x_{i0}}+ \sum_{i \in T_{b1}}\widehat{x_{i1}} \right) \leq
+	2 \widehat{w} \leq w_{o}
+\end{align*}
+by definition of $w_S$ this yields $w_S \leq w_o$ as desired.
+
