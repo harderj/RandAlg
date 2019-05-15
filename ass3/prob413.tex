@@ -1,0 +1,57 @@
+\section*{Problem 4.13}
+The $0-1$ linear program solving this problem is the following:
+\begin{itemize}
+	\item Minimize $||c||_1$
+	\item $c_i \in \left\{ 0,1 \right\}$ for $0 \leq i \leq m=\#U$
+	\item $Mc \geq 1$
+\end{itemize}
+We will consider the linear program relaxation where $c_i \in \left[ 0,1 \right]$, 
+which can be solved in time polynomial in the size of $M$. \\ \\
+Now given a solution to the linear program relaxation, $\widehat{c}$, 
+we sample a $0-1$ vector $c$ such that $P(c_i=1)=\text{min}\left\{ 1, 8\widehat{c_i} \log n \right\}$. \\ \\
+For $1 \leq j \leq n$ let $M_j$ denote the $j$th row of $M$,
+and for $1 \leq i \leq m$ define 
+\begin{align*}
+	X_i=\min\left\{ M_{ji}, c_i \right\}
+\end{align*}
+Then the $X_i$ are poison trials and $M_j \cdot c= \sum_{i=1}^m X_i$. Furthermore
+\begin{align*}
+	E\left( M_j \cdot c \right)=\sum_{i=1}^{m}EX_i=8 \log n M_j\cdot \widehat{c} \geq 8 \log n
+\end{align*}
+since the fact that $\widehat{c}$ is a solution to the linear program relaxation yields $M_j \cdot \widehat{c} \geq 1$. \\ \\
+Now the generalized Chernoff bound yields
+\begin{align*}
+	P\left( \sum_{i=1}^{m}X_i < (1-\delta)8 \log n \right) 
+	< \exp\left( -8 \log n \frac{\delta^2}{2} \right)
+	= \frac{1}{n^{4\delta^2}}
+\end{align*}
+for $0 < \delta \leq 1$. \\
+Now choosing $\delta$ sufficiently close to $1$ we can ensure that 
+$\left( 1-\delta \right)8 \log n \leq 1$ and that
+$\delta^2 \geq \frac{1}{2}$, and then the above yields
+\begin{align*}
+	P\left( \sum_{i=1}^{m}X_i =0 \right)=P\left( \sum_{i=1}^{m}X_i<(1-\delta)8 \log n \right)
+	<\frac{1}{n^{4\delta^2}} \leq \frac{1}{n^2}
+\end{align*}
+By the above observations we have proven that $P(M_j \cdot c=0) \leq \frac{1}{n^2}$. \\ 
+Hence we can now bound the probability that the vector $c$ obtained by the randomized rounding procedure described above
+is not a set-cover by
+\begin{align*}
+	&P\left( c \ \text{is not a set-cover} \right) \\
+	=&P\left( \cup_{j=1}^n \left( M_j \cdot c=0 \right) \right) \\
+	\leq& \sum_{j=1}^{n}P\left( M_j \cdot c=0 \right) \\
+	\leq &\sum_{j=1}^{n} \frac{1}{n^2} =\frac{1}{n}
+\end{align*}
+To check whether $c$ is in fact a set-cover we just have to compute the matrix product $Mc$
+and check whether any entry is $0$, which is certainly polynomial in the size of $M$. \\ \\
+Thus we have deviced a Monte Carlo algorithm with expected polynomial running time
+such that a given output can be verified in polynomial time and the probability of a correct output is at least
+$1-\frac{1}{n}$. \\
+Then by exercise 1.3 this can be used to construct a Las Vegas algorithm whose expected running time is certainly polynomial. \\ \\
+To compute bounds on the expected size of the set-cover observe that since
+$\widehat{c}$ is a solution to the linear program relaxation we certainly have
+$||\widehat{c}||_1 \leq C(M)$ and hence
+\begin{align*}
+	E||c||_1 \leq \sum_{i=1}^{m} \widehat{c_i}8 \log n = ||\widehat{c}||_1 8 \log n \leq C(M) 8 \log n
+\end{align*}
+as desired.
