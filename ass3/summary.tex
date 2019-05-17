@@ -1,0 +1,30 @@
+\section*{Summary}
+
+\subsection*{Chernoff bounds}
+Let
+$X_1, X_2, \cdots, X_n$
+be Bernoulli random variables (Poisson trials) with
+$P(X_i = 1) = p_i$.
+Set $\mu = \sum_{i=1}^n p_i$
+Then
+\[ P\left(\sum_{i=1}^n X_i > (1+\delta)\mu \right) < \left( \frac{e^\delta}{(1+\delta)^{1+\delta}} \right)^\mu =: F^+(\mu, \delta) \]
+and
+\[ P \left( \sum_{i=1}^n X_i < (1-\delta)\mu \right) < e^{\mu \delta^2 /2} =: F^-(\mu, \delta) \]
+
+\subsection*{Permutation routing problem}
+$N$ \emph{processors} \emph{connected} by \emph{wires} (seen as a graph: nodes and edges).
+Each processor $p_i$ sends one \emph{packet} to a \emph{destination} processor $p_{\pi(i)}$ where $\pi : N \to N$ is a permutation.
+Only one packet may follow the same edge at each timestep.
+An algorithm must specify
+1: a \emph{route} for every packet (that is a path from source to destination)
+2: a \emph{queueing discipline} for which packet goes first when multiple want to travel along the same edge.
+The algorithm is called \emph{oblivious} if the choice of every route only depend on its own destination.
+\begin{theorem}
+  A deterministic oblivious permutation routing algorithm on a network of $N$ nodes each of out-degree $d$ there is an instance requiring $\Omega(\sqrt{N/d})$ steps.
+\end{theorem}
+In a special case where the network is the graph called the \emph{boolean hypercube} we can find a randomized algorithm that satisfies
+\begin{theorem}
+  With probability at least $1 - (1/N)$ every packet reaches its destination in $14n$ or fewer steps.
+\end{theorem}
+The boolean hypercube has $N = 2^n$ nodes each connected to exactly $n$ neighbor nodes.
+Thus the randomized algorithm requires only $14 \log_2(N)$ steps with high probability, superior to the deterministic worst case of $\Omega(\sqrt{N/n})$.

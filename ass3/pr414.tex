@@ -25,4 +25,4 @@ By the lower Chernoff bound with $\delta = 3/4$ and $\mu = 1/2 m$ the probabilit
 Thus for any $x \in S$ the probability that $x$ has height greater than $\frac{8}{\ln(4/3)} \ln(n) = h_m$ is less than $n^{-3}$.
 By union bounding the chance that the whole tree has height more than $h_m$ is less than $n^{-2}$. 
 The sum of the heights of all elements equal the number of comparisons of the algorithm.
-Therefore the number of comparisons is at most $\frac{8}{\ln(4/3)} n \ln(n)$ with probability $1 - n^{-2}$ proving that \emph{RandQS} is $O(n \ln(n))$ with high probability. 
+Therefore the number of comparisons is at most $\frac{8}{\ln(4/3)} n \ln(n) < 32 n \ln(n)$ with probability $1 - n^{-2}$ proving that \emph{RandQS} is $O(n \ln(n))$ with high probability. 
