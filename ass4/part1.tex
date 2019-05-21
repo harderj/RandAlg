@@ -1,0 +1,55 @@
+\section*{Part 1}
+\subsection*{Problem 1}
+Analogously to the proof of theorem 6,
+we wish to find a bound on the probability that more than $\frac{3}{4}2^{\ell}$ 
+keys from $S \setminus \left\{ q \right\}$ hash to some given $\ell$-intervali, $I$. \\ \\
+As in the proof let $X_x$ indicate whether $h(x) \in I$, where $x \in S \setminus \left\{ q \right\}$. 
+Then $X=\sum_{x \in S \setminus \left\{ q \right\}}^{}X_x$ counts the elements different from $q$ that hash to $I$. Then
+\begin{align*}
+	&\mu=EX=\sum_{x \in S \setminus \left\{ q \right\}}^{}EX_x \\
+	=&\sum_{x \in S \setminus \left\{ q \right\}} P(h'(x)  \in I) \\
+	=&\sum_{x \in S \setminus \left\{ q \right\}} \sum_{y \in I}^{}P\left( h'(x) =y \right) \\
+	<&\sum_{x \in S \setminus \left\{ q \right\}}2^{\ell}\left( 1/t+1/p \right) \\
+	<& n 2^{\ell}\left( 1/t+1/p \right) \\
+	\leq & n2^{\ell} \left( \frac{1}{t}+\frac{1}{24t} \right) \\
+	\leq & n 2^{\ell} \frac{25}{24t} \\
+	\leq & \frac{2}{3}2^{\ell} \frac{25}{24} = \frac{50}{72}2^{\ell}
+\end{align*}
+Hence we get
+\begin{align*}
+	X \geq \frac{3}{4}2^{\ell} \implies X-\mu \geq \frac{3}{4}2^{\ell}-\mu \geq \frac{1}{18}2^{\ell} >\frac{1}{15}\sqrt{2^{\ell}\mu}
+\end{align*}
+and using the fourth moment bound we obtain
+\begin{align*}
+	P\left( X \geq \frac{3}{4}2^{\ell} \right) \leq \frac{4}{\left( \frac{1}{15}2^{\ell}\right)^4} 
+	= \frac{4 \cdot 15^4}{2^{2\ell}} \in \mathcal{O}\left( \frac{1}{2^{2 \ell}} \right)
+\end{align*}
+Hence the conclusion in the proof of theorem 6 still holds.
+
+\subsection*{Problem 2}
+
+\subsection*{Problem 3}
+Using the same notation as in the proof of theorem 6 we observe that
+\begin{align*}
+	VX_x=\left( 1-\frac{2^{\ell}}{t} \right)\frac{2^{\ell}}{t} \leq \frac{2^{\ell}}{t}
+\end{align*}
+and since the hash function is 3-independent the $X_x$'s will be pairwise independent so
+\begin{align*}
+	VX=\sum_{x \in S \setminus \left\{ q \right\}}^{}VX_x \leq n \frac{2^{\ell}}{t} \leq \frac{2}{3}2^{\ell}
+\end{align*}
+and similar to the proof of theorem 6 we obtain
+\begin{align*}
+	X \geq \frac{3}{4}2^{\ell} \implies X-\mu \geq \frac{1}{12}2^{\ell} > \frac{1}{10} \sqrt{2^{\ell} VX}
+\end{align*}
+yielding (by Chebyshev)
+\begin{align*}
+	P\left( X \geq \frac{3}{4}2^{\ell} \right) \leq 
+	P\left( |X-\mu| > \frac{1}{10}2^{\ell/2} \sqrt{VX} \right) \leq \frac{100}{2^{\ell}} \in \mathcal{O}\left( \frac{1}{2^{\ell}} \right)
+\end{align*}
+So the expected operation time is
+\begin{align*}
+	\mathcal{O}\left( 1+\sum_{\ell=0}^{\lg t}2^{\ell}P_{\ell} \right)= 
+	\mathcal{O}\left( 1+\sum_{\ell=0}^{\lg t} 1 \right) =
+	\mathcal{O} \left( 1+ \lg t \right)= \mathcal{O}\left( \lg n \right)
+\end{align*}
+since $n \leq \frac{2}{3}t$.
