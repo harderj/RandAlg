@@ -1,0 +1,37 @@
+\section*{Part 3}
+We are given a set $S$ of $n$ keys.
+Similar to the approach in lecture 6, we 
+\begin{description}
+  \item[Step I] Pick a hash function $h:U \to [2n]$,
+    this time by choosing an odd $a$
+    and having $h(x) = a \cdot x >> (w - b)$.
+    Let $S_i = \{ x \in S \mid h(x) = i \}$,
+    $s_i = |S_i|$
+    and $B = \sum_{i=0}^{n-1} \binom{n}{2}$.
+    If $B \geq n$ we start over,
+    picking another $a$.
+    Otherwise continue with step II.
+  \item[Step II]
+    For each $i \in [2n]$
+    pick a hash function $h_i:U \to [2 s_i (s_i - 1)]$
+    until $h_i$ has no collisions on $S_i$.
+\end{description}
+Let $b = \ceil{\lg(n)} + 1$.
+Then since $P(h(x) = h(y)) < 2/2^b \leq 1/n$
+\begin{align*}
+  \bb{E}(B) &= \left( \sum_{x,y \in S, x \neq y} P(h(x) = h(y)) \right)
+  \\ &= \frac{n(n-1)}{2} \frac{2}{2^b}
+  \\ &= \frac{n-1}{2}
+  \\ &\leq n/2
+\end{align*}
+So $P(B > n) \leq P(B > 2 \bb{E}(B)) < 1/2 $ by Markov.
+Thus the expected number of trials before finding the right $h$ is 2.
+And each trial takes linear time.
+In the second step in we the analogous with
+$h_i \to [2^{\lg(s_i(s_i - 1)) + 1}]$
+obtaining that the expected number of trials before $B_i < 1$ is less than 2.
+Each trial again taking linear time.
+
+As for the space requirement we have $2n$ for the first step hash function,
+and $\sum_{i} 2 s_i (s_i - 1) = 2 B < 2n$ for the second step set of hash functions.
+All in all $4n = O(n)$ space.
