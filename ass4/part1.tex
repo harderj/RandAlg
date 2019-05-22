@@ -27,7 +27,40 @@ and using the fourth moment bound we obtain
 Hence the conclusion in the proof of theorem 6 still holds.
 
 \subsection*{Problem 2}
-
+By lemma 2 we get that if there is a run of length $r \geq 2^{\ell+2}$ 
+hence for a given run R, the probability that this run is longer than $2^{\ell+2}$ is bounded by $4 P_{\ell}$. \\ 
+Throughout the rest of the argument we will take $\ell=\lg(C \lg n)$. 
+Then $2^{\ell+2}=4C \lg n \in \mathcal{O}(n)$. \\ \\
+Now let $I$ be some $\ell$-interval. Then as in the proof of theorem 6 let $X_x$ indicate the event
+$\left( h(x) \in I \right)$ for any $x \in \left[ n \right]$ and $X=\sum_{x \in \left[ n \right]}^{}X_x$. \\
+Then $X$ counts the number of keys hashing to $I$ and we still have $\mu=EX \leq \frac{2}{3}2^{\ell}$, 
+and because we are assuming full randomness the $X_x$ are independent poisson trials. \\
+Hence, using Chernoff bounds and the upper bound for $EX$ we get 
+\begin{align*}
+	&P(X \geq \frac{3}{4}2^{\ell}) \\
+	\leq& P\left( X > (1+\frac{1}{7})\frac{2}{3}2^{\ell} \right) \\
+	\leq & \exp \left( \frac{-\frac{2}{3}2^{\ell}\frac{1}{49}}{4} \right) \\
+	=& \exp \left( C \lg n \frac{2}{12 \cdot 49} \right) \\
+	=& n^{-C\frac{1}{294}} \leq \frac{1}{4n^{11}}
+\end{align*}
+for appropriately chosen $C$. 
+Observe that we can use this version of the Chernoff bound because $\frac{1}{7} \leq 2e-1$. \\ \\
+Now by the observation derived from lemma 2 we have
+\begin{align*}
+	P\left( |R| \geq 2^{\ell+2} \right) \leq 4 P_{\ell} \leq \frac{1}{n^{11}}
+\end{align*}
+and hence 
+\begin{align*}
+	P\left( \text{some run is longer than } 2^{\ell+2} \right) 
+	\leq \sum_{R}^{}P\left( |R| \geq 2^{\ell+2} \right)
+	\leq n \frac{1}{n^{11}}=\frac{1}{n^{10}}
+\end{align*}
+since there can be at most $n$ runs, one for each key. \\ \\
+Hence by taking complements we get
+\begin{align*}
+	P\left( \text{all runs are no longer than } 2^{\ell+2} \right) \geq 1-\frac{1}{n^{10}}
+\end{align*}
+as desired.
 \subsection*{Problem 3}
 Using the same notation as in the proof of theorem 6 we observe that
 \begin{align*}
@@ -52,4 +85,4 @@ So the expected operation time is
 	\mathcal{O}\left( 1+\sum_{\ell=0}^{\lg t} 1 \right) =
 	\mathcal{O} \left( 1+ \lg t \right)= \mathcal{O}\left( \lg n \right)
 \end{align*}
-since $n \leq \frac{2}{3}t$.
+as desired.
