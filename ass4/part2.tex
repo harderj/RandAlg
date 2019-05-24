@@ -1,0 +1,24 @@
+
+\section*{Part 2}
+
+There is a correspondance between the sorting tree of the \emph{RandQS} algorithm
+and the random treaps.
+This correspondance is basically that the choice of pivots in RandQS
+corresponds to the choice of priorities in a random treap.
+Both the RandQS tree and the treap sorts the keys from left to right.
+Which pivot is chosen, then, is simply the one with highest priority,
+since must have higher priority than all nodes in its subtrees.
+Similar to the lecture slides let $x_i$ denote the key with the
+$i$th lowest priority.
+Let $p_i$ denotes the priorities.
+And let $X_{ij} = 1_{\{x_i \text{ is an ancester of } x_i\}}$.
+Suppose the $x_k$ has priority $-\infty$.
+Then $ X_{ik} = 1 \iff p_i = \max\{p_i, \dots, p_{k-1} \} $.
+So $\bb{E}(X_{ik}) = P(X_{ik} = 1) = \frac{1}{k - 1 + 1 - i} = \frac{1}{k - i}$.
+So the expected depth of $x_k$ is
+$ \bb{E}(\sum_{i<k} X_{ik}) = \sum_{i=1}^{k-1} \frac{1}{d} = H_{k-1} $.
+
+When deleting a key $x$ in a random treap we assign $x$ priority $-\infty$.
+Then make rotations until $x$ is a leaf.
+The number of rotations needed is thus exactly the difference in depth between
+$x$ and a supposed key with priority $-\infty$.
