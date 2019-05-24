@@ -3,7 +3,6 @@
 *.swo
 *.swp
 *.swn
-*.pdf
 *.log
 *.synctex.gz
 *.aux
