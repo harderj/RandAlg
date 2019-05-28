@@ -1,0 +1,24 @@
+\section*{Problem 5.3}
+\subsection*{(a)}
+
+Each vertice survives the deletion process with probability $\frac{1}{d}$
+so the number of surviving vertices is binomially distributed 
+with trial parameter $n$ and success parameter $\frac{1}{d}$ and hence the expected number of surviving vertices
+is $\frac{n}{d}$. \\ \\
+Now observe that an edge is deleted if and only if one of its end points is. 
+Hence it survives if and only if both its end points do. 
+Since the deletions are performed independently, this happens with probability $\frac{1}{d^2}$,
+so the number of surviving edges is binomially distributed
+with trial parameter $\frac{nd}{2}$ and success parameter $\frac{1}{d^2}$ and as before we expect
+$\frac{nd}{2}\cdot \frac{1}{d^2}=\frac{n}{2d}$ surviving edges.
+
+\subsection*{(b)}
+Consider the following extention of the experiment: \\
+After the deletion process iterate through the remaining edges
+deleting one of its end points (in any fashion - deterministically or probabilistically)
+and its incident edges. \\ \\
+This will yield an independent subset (which might be empty!) 
+since any vertice still remaining after this procedure will have all its neighbors deleted. \\ \\
+If $v_0$ and $e_0$ denote the number of vertices resp. edges remaining after the first deletion round
+then the resulting independent subset after the second deletion process will have at least
+$\max\left\{ 0, v_0-e_0 \right\}$ vertices.
