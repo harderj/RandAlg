@@ -6,3 +6,6 @@
 *.log
 *.synctex.gz
 *.aux
+*.dvi
+*.fls
+*.fdb_latexmk
