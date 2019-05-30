@@ -1,0 +1,28 @@
+\section{Problem 5.4}
+
+\subsection{(a)}
+Suppose $g(x) = ax + b$. Let $x \in [0,1]$. Then
+\begin{align*}
+  f(x) &= f((1-x)\cdot 0 + (1-(1-x))\cdot 1)
+  \\ &\geq (1-x)f(0) + x f(1)
+  \\ &\geq (1-x)g(0) + x g(1)
+  \\ &= (1-x) b + x(a+b)
+  \\ &= b+ax = g(x)
+\end{align*}
+
+\subsection{(b)}
+Assuming $k \in \N_0$ and that $f$ is defined on $[0,1]$.
+When $k=0,1$ $f$ is constant (or undefined) or linear so concave.
+Otherwise $f$ is smooth on $[0,1]$ with second derivative
+\[ f''(x) = -\frac{k-1}{k} \left( 1 - \frac{x}{k} \right)^{k-2} < 0 \]
+and so concave.
+
+For $k \in -\N$ $f$ is not defined on $0$,
+but smooth on $(0,1]$ with the same second derivative as before,
+so concave again.
+
+\subsection{(c)}
+Since $f(0) = 0 \geq 0 = g(0)$,
+$g(1) = (1 - (1/k))^k \leq (1 - (1/k))^k = f(1)$,
+and $g$ is linear,
+we are done by (a) and (b).

@@ -1,0 +1,35 @@
+\section*{Problem 5.5}
+
+Say each $\ell \in L$ chooses $n^{3/4}$ $R$-neighbors at random \emph{without} replacement.
+Thus for fixed $r \in R, \ell \in L$
+\[ P( \ell \sim r ) = \frac{n^{3/4}}{n} = n^{-1/4} \]
+So (for $r$ still fixed)
+\begin{align*} P( d(r) > 3 n^{3/4} )
+&= \binom{n}{3n^{3/4}} P(\ell \sim r)^{3 n^{3/4}}
+\\ &= \left( \frac{n e}{3 n^{3/4}} \right)^{3 n^{3/4}} \left( n^{-1/4} \right)^{3n^{3/4}}
+\\ &= \left( \frac{n e}{3 n} \right)^{3 n^{3/4}}
+\\ &= \left( \frac{e}{3} \right)^{3 n^{3/4}}
+\end{align*}
+So
+\[P( \exists r \in R \mid d(r) > 3n^{3/4} )
+\leq n \left( \frac{e}{3} \right)^{3n^{3/4}}
+\stackrel{n \to \infty}{\longrightarrow} 0 \]
+In particular, at some point this probability is less that $1/2$.
+This ensures the condition that every vertex in $R$ has degree at most $3 n^{3/4}$.
+
+Lets estimate the probability that some subset of $n^{3/4}$ vertices
+in $L$ does \emph{not} have $n - n^{3/4}$ $R$-neighbors.
+This is
+\begin{align*}
+  P(\exists \ell_1, \cdots, \ell_{n^{3/4}} \in L, r_1, \cdots, r_{n^{3/4}} \in R
+  \mid \ell_i \not \sim r_j \forall i,j )
+  \\ \leq \binom{n}{n^{3/4}} \binom{n}{n^{3/4}} P(\ell_1, \dots, \ell_{n^{3/4}}
+  \not \sim r_1, \dots, r_{n^{3/4}} )
+  \\ \approx \left( \frac{ne}{n^{3/4}} \right)^{2n^{3/4}} P(r \not \sim \ell_1,
+  \dots, r \not \sim \ell_{n^{3/4}} )
+  \\ = e^{(2 + \ln(n)/2) n^{3/4}} \left( \frac{n - n^{3/4}}{n} \right)^{n^{3/4}}
+  \\ \approx e^{(2 + \ln(n)/2) n^{3/4} - n^{5/4}}
+  \stackrel{n \to \infty}{\longrightarrow} 0
+\end{align*}
+Thus for $n$ large enough, by union bounding, the probability that our conditions
+is not satisfied is less than 1.
