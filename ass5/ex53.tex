@@ -21,4 +21,9 @@ This will yield an independent subset (which might be empty!)
 since any vertice still remaining after this procedure will have all its neighbors deleted. \\ \\
 If $v_0$ and $e_0$ denote the number of vertices resp. edges remaining after the first deletion round
 then the resulting independent subset after the second deletion process will have at least
-$\max\left\{ 0, v_0-e_0 \right\}$ vertices.
+$\max\left\{ 0, v_0-e_0 \right\}$ vertices. \\ \\
+By subproblem $(a)$ the expected number of vertices in the independent set resulting from this experiment
+run on a graph with $n$ vertices and $\frac{nd}{2}$ edges is at least
+$\max\left\{ 0, \frac{n}{d}-\frac{n}{2d} \right\}=\max\left\{ 0, \frac{n}{2d} \right\}=\frac{n}{2d}$. \\
+Since a random variable assumes at least one value no less than its expectation with positive probability
+this yields the existence of at least one independent set of at least $\frac{n}{2d}$ vertices.
