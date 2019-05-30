@@ -1,0 +1,42 @@
+\section*{The probabilistic method}
+Two main ideas:
+\begin{itemize}
+	\item Any random variable assumes at least one value no less and one value no greater
+		than its expectation with positive probability
+	\item If an object chosen according to some distribution from a universe satisfies a property with positive probability
+		then at least one object from this universe satisifies said property.
+\end{itemize}
+Usefull observations for existence proofs: 
+construct thought experiments and show that the output of such experiments satisfy certain properties with positive probability
+or proof statements about the expected outcome of the experiment.
+\subsection*{Example}
+For an undirected graph $G\left( E,V \right)$ with $n$ vertices and $m$ edges,
+there is a partition of the vertices into sets $A$ and $B$ such that
+\begin{align*}
+	\# \left\{ (u,v) \in E \ | \ u \in A \ \text{and} \ v \in B \right\} \geq \frac{m}{2}
+\end{align*}
+To see this consider the experiment of choosing $A$ and $B$ 
+by independently and equiprobably assigning each vertex to either $A$ or $B$
+and compute the expected size of the above set. \\ \\
+\textbf{Theorem} \indent For $n$ large enough there exists a bipartite graph $G(L,R,E)$
+with $\#L=n$ and $\#R = 2^{\log^2 n}$ such that
+\begin{itemize}
+	\item Every subset of $n/2$ vertices of $L$ has at least $2^{\log^2 n}-n$ neighbors in $R$
+	\item No vertex of $R$ has more thatn $12 \log^2n$ neighbors
+\end{itemize}
+Can be proven by considering the experiment of letting each vertex in $L$ choose $2^{\log^2n}4 \log^2n/n$ neighbors in $R$
+independently at random and considering the probability of the thus obtained graph satisfying the above requirements 
+(its strictly positive). \\ \\
+Such expanding graphs can be used for \textit{probability amplification}:
+in the case where we have an RP algorithm, $A$, for deciding membership of a language $L$
+with witnesses from $\Z_n$ we have seen how two point sampling can be used to obtain an error probability of
+less than $1/t$ with $t$ trials, using $2 \log n$ random bits to sample two random numbers from $\Z_n$. \\
+Using $\log^2n$ bits of randomness we can distinguish a vertex of $R$ in such a graph
+and consider its (at most $12 \log^2n$) neighbors in $L$, $r_1,\cdots,r_k$
+using these as potential witnesses. \\
+By the above theorem the error probability obtained by using these neighbors in stead of random numbers is at most
+$n/n^{\log n}$. \\ \\
+We observe that the above theorem only asserts the existence of a graph with the stated properties
+and does not construct it, but at least the theorem guarantees that a search for such a graph will not be in vain,
+and once one such graph is found it can be used for probability amplification over and over again.
+\newpage
