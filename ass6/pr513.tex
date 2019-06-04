@@ -1,1 +1,8 @@
 \section*{Problem 5.13}
+Let $v_1,\cdots,v_n$ denote the vertices of the graph. \\
+As in section 5.6 of Motwani \& Raghavan we consider the decision tree of the experiment. \\
+Each node is labelled by two sets $[A,B]$ corresponding to the assignments made so far,
+i.e. the root $r$ is labelled $[\emptyset, \emptyset]$ 
+and if $a$ is any node at level $i$ labelled by $[A,B]$ we have $\# (A \cup B)=i$,
+and if $c$ and $d$ are its left and right child respectively, they will be labelled
+$[A \cup \left\{ v_{i+1} \right\}, B]$ and $[A, B \cup \left\{ v_{i+1} \right\}]$ respectively. \\ \\
