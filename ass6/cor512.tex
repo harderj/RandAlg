@@ -1,1 +1,28 @@
-By assumption we have that any vertex of any dependency graph can have degree at most $d$.
+\section*{Proof of corollary 5.12}
+By assumption we have that any vertex of any dependency graph can have degree at most $d$. \\ 
+Furthermore the assumption that $ep(d+1) \leq 1$ implies
+\begin{align*}
+	p(d+1) \leq \frac{1}{e} \leq \left( 1-\frac{1}{d-1} \right)^d
+\end{align*}
+which implies
+\begin{align*}
+	p \leq \frac{1}{d+1}\left( 1-\frac{1}{d-1} \right)^d \leq \frac{1}{d-1}\left( 1-\frac{1}{d-1} \right)^d
+\end{align*}
+Hence for $d>2$ we let $x_i=\frac{1}{d-1}$ for $i=1,\cdots,n$ and then we obtain for any $i=1,\cdots,n$ that
+\begin{align*}
+	x_i \prod_{(i,j) \in E}\left( 1-x_i \right) \geq \frac{1}{d-1}\left( 1-\frac{1}{d-1} \right)^d \geq p =P(\mathcal{E}_i)
+\end{align*}
+so by the Lovasz local lemma we obtain that
+\begin{align*}
+	P\left( \bigcap_{i=1}^n \overline{\mathcal{E}_i} \right) \geq \prod_{i=1}^n\left( 1-x_i \right)=\left( 1-\frac{1}{d-1} \right)^n>0
+\end{align*}
+as desired. \\ \\
+If $d=1$ we have
+\begin{align*}
+	\left( 1-\frac{1}{d+1} \right)^d=\frac{1}{2} \geq \frac{1}{e}
+\end{align*}
+and if $d=2$ we have
+\begin{align*}
+	\left( 1-\frac{1}{d+1} \right)^d=\left(\frac{2}{3} \right)^2=\frac{4}{9} \geq \frac{1}{e}
+\end{align*}
+so in either case we can apply the same argument with $x_i=\frac{1}{d+1}$.
