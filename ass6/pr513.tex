@@ -5,4 +5,44 @@ Each node is labelled by two sets $[A,B]$ corresponding to the assignments made 
 i.e. the root $r$ is labelled $[\emptyset, \emptyset]$ 
 and if $a$ is any node at level $i$ labelled by $[A,B]$ we have $\# (A \cup B)=i$,
 and if $c$ and $d$ are its left and right child respectively, they will be labelled
-$[A \cup \left\{ v_{i+1} \right\}, B]$ and $[A, B \cup \left\{ v_{i+1} \right\}]$ respectively. \\ \\
+$[A \cup \left\{ v_{i+1} \right\}, B]$ and $[A, B \cup \left\{ v_{i+1} \right\}]$ respectively,
+and the algorithm proceeds equiprobably to either child. \\ \\
+Now for a node, $a$, in the decision tree let $E(a)$ denote the expected number of crossing edges
+conditioned on reaching node $a$. Then clearly 
+\begin{align*}
+	E(a)=\frac{E(c)+E(d)}{2}
+\end{align*}
+so that $\max\left\{ E(c), E(d) \right\} \geq E(a)$.
+Furthermore we have seen in theorem 5.1 that $E(r) \geq m/2$. \\
+Hence it is possible to make choices that do not decrease the expected number of crossing edges
+all the way from the root to a leaf, 
+and since there is no more randomness at a leaf, $l$, the number of crossing edges is equal to $E(l)$,
+and hence making the choices such that the expected number of crossing edges do not decrease
+will yield a partition where this number is at least $m/2$. \\ \\
+So we are left with the task of determining which of $E(c)$ and $E(d)$ is the larger. \\
+To this end consider a node, $a$, at level $i$ in the tree, 
+i.e. proceeding to either the left or the right child corresponds to assigning
+$v_{i+1}$ to $A$ or $B$ respectively. Let $k_A$ denote the number of crossing edges from
+$v_{i+1}$ to $A$ and define $k_B$ analogously. \\ \\
+Now observe that after assigning $v_{i+1}$
+we still have for any edge $(u,v)$, where either or both of it end points have not yet been assigned,
+that it will become a crossing edge with probability $\frac{1}{2}$.
+Furthermore, the number of such edges will be the same regardless of the assignment of $v_{i+1}$; 
+it will be the number of such edges before the assignment of $v_{i+1}$
+minus the number of edges one of whose end points is $v_{i+1}$ and the other is in $A \cup B$.
+Call this number $N_0$. \\
+Then since assigning $v_{i+1}$ to $A$ adds $k_B$ crossing edges and assigning it to $B$
+adds $k_A$ crossing edges we obtain that
+$E(c)=K_0+k_B+\frac{N_0}{2}$ and $E(d)=K_0+k_A+\frac{N_0}{2}$, 
+where $K_0$ is the number of crossing edges from $A$ to $B$ before assigning $v_{i+1}$.
+Hence we have reduced the question to determining the larger of $k_A$ and $k_B$
+which can be done by just checking the other end point of all of $v_{i+1}$'s incident edges. \\ \\
+If there are no multiple edges there can be at most $n-1$ of these and
+so this procedure is polynomial when performed on all $n$ vertices. \\
+If we allow multiple edges we can merge any multiple edges between to vertices into one
+giving it an integer weight corresponding to the number of edges between the two vertices.
+This weight is then used in computing $k_A$ and $k_B$ 
+and these computations are essentially equivalent to the case of no multiple edges. \\ \\
+Thus by the above considerations the deterministic algorithm of computing $k_A$ and $k_B$ 
+for each vertex in turn and assigning it to $B$ if $k_A$ is the largest and vice versa
+will obtain a partition with at least $m/2$ crossing edges in polynomial time as desired.
