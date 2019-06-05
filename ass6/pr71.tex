@@ -4,4 +4,12 @@ computing $P(Mr=0 \ | \ M \neq 0)$. \\
 So assume that $M$ is a non-zero $n \times n$ matrix and sample $r=(r_1,\cdots,r_n)^T$
 by sampling each entry independently and uniformly from $\left\{ 0,1 \right\}$. \\ \\
 Now since $M$ is non-zero, at least one of its row, $M_1,\cdots,M_n$ is non-zero.
-Let $M_i$ denote this row.
+Let $M_i$ denote this row. \\
+Then with $x=(x_1,\cdots,x_n)^T$, $M_ix$ is a multivariate (non-zero) polynomial of total degree $1$,
+and hence by Schwartz-Zippel $P\left( M_ir=0 \right) \leq \frac{1}{2}$,
+since the $r_1,\cdots,r_n$ are sampled independently and uniformly from a subset of $\R$ of size $2$. \\ \\
+Hence 
+\begin{align*}
+	P\left( Mr=0 \right)=P\left( M_1r=0,\cdots,M_nr=0 \right) \leq P\left( M_ir=0 \right) \leq \frac{1}{2}
+\end{align*}
+proving theorem $7.1$ using the Schwartz-Zippel theorem.
