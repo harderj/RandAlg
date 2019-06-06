@@ -1,6 +1,6 @@
 \section{Problem 7.4}
 
-Suppose two multisets
+Suppose two integer multisets
 $X=\langle x_1, \dots, x_n\rangle,Y=\langle y_1, \dots, y_n \rangle$ are given.
 We can associate to a multiset (e.g. X) the polynomial
 \[ p_X(z) = (z - x_1)(z - x_2) \dots (z - x_n) \]
@@ -9,5 +9,39 @@ It is easy to see that identical multisets give rise to the same polynomial,
 On the other hand if $X$ and $Y$ are not identical,
 the multiplicity of at least one root must differ
 (say non-roots have multiplicity zero) so the polynomials will differ.
-We can now envoke the Schwartz-Zippel theorem\ldots %TODO
+This means we can tell apart the multisets by determining if their polynomials differ.
+Observe that $p_X$ is a polynomial in 1 variable which has degree $n$.
+By the Schwartz-Zippel theorem we can choose a field $\bb{F}$
+containing $x_1, y_1, \dots, x_n, y_n$
+and a subset $S \subseteq \bb{F}$ with $|S|=2n$ 
+such that
+\[ P(p_X(r) - p_Y(r) = 0 \mid p_X - p_Y \not \equiv 0) \leq \frac{1}{2} \]
+when $r \in S$ is chosen uniformly at random.
+If we assume multiplication in $\bb{F}$ is $O(1)$
+we get a Monte Carlos algorithm with $2^{-m}$ probability of failure
+running in $O(m n)$ time
+- an improvement to the $O(n \log n)$ of the sorting algorithm.
 
+We now move on to discuss what happens if we have to consider
+the sizes of the integers involved and
+the time complexity of comparison and multiplication of such.
+Assume the integers in the multisets are all less than $k$.
+We can convert them to $\ell = \ceil{\log_2 (k) }$ bit strings in $O(n)$ time.
+To determine equality of two of the integers takes $O(\ell)$ time. 
+Thus the sorting algorithm requires $O(n \log n \log k)$ time.
+
+Looking at our randomized algorithm we have a problem with the values of the
+polynomials becoming very large,
+in fact at the order $k^n$ requiring us to work with $\ell n$ bit numbers
+if we use $\R$ as the field.
+However we could choose a prime $2k>p>k$ and work with the finite field $\bb{F}_p$.
+This garantees $\ell = \ceil{\log_2 (p)} = O(\log(k))$ bit numbers are enough.
+Multiplication of $\ell$ bit numbers is actually $O(\ell^2) = O(\log k)$.
+So we can evaluate our polynomials in $O(n \log k)$ time.
+All in all we get $O(n m \log k)$ running time
+with success probability $1 - 2^{-m}$ still an improvement to $O(n \log n \log k)$.
+
+However if we want to convert from Monte Carlo to Las Vegas:
+To garantee that two multisets are equal we need to check at least $n+1$
+different values from $S$ yielding a bad running time of
+$O(n^2 \log k)$.
